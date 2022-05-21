@@ -209,7 +209,7 @@ height: 50%;
     .shopping-cart{
         height: 50%;
         width:auto;
-        margin: auto;
+      
     }
     .checklist{
         grid-template-columns:10% 90%;
