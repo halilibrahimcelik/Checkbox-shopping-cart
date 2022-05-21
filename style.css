@@ -99,7 +99,7 @@ img{
     display: flex;
     flex-direction: column;
     width:auto;
-    margin-top:3rem;
+    margin:3rem 2rem 0 2rem;
     gap:2rem;
     background-color: rgb(215, 210, 210);
     padding:1rem;
@@ -202,9 +202,9 @@ padding: 0.2rem;
 height: 50%;
     }
     .btn-continue{
-        align-self: center;
+     
         width: 10rem;
-        justify-content: center;
+        margin:1rem auto;
     }
     .shopping-cart{
         height: 50%;
