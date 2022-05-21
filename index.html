@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body> 
+    
+    
+    <h1 class="header"> CHECKBOX</h1>
+    <section class="main">
+      <div class="container">
+        <div class="contact__form">
+          <h2>Contact information</h2>
+          <form class="contact" action="">
+            <label for="email">Email</label>
+            <div class="contact-info">
+              <i class="fa-solid fa-envelope">
+              </i>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Your email.."
+              />
+            </div>
+            <label for="phone"> Phone </label>
+
+            <div class="contact-info">
+              <i class="fa-solid fa-phone">
+              </i>
+              
+                <input type="tel" name="phone" placeholder="Enter Your phone.." />
+            </div>
+          </form>
+        </div>
+
+        <div class="shipping__form">
+          <form>
+            <h2>Shipping address</h2>
+            <div>
+              <label for="name"> Full name </label>
+            
+              <div class="contact-info">
+                <i class="fa-solid fa-user-large"></i>
+                </i>
+                <input
+                type="name"
+                id="name"
+                name="name"
+                placeholder="Enter Your Name"
+              />
+              </div>
+            </div>
+            <label for="address">Address </label>
+            <div class="contact-info">
+              <i class="fa-solid fa-house"></i>
+         
+              <input
+                type="address"
+                name="address"
+                placeholder="Enter Your Adress"
+              />
+            </div>
+            <label for="City"> City</label>
+     
+            <div class="contact-info">
+              <i class="fa-solid fa-city"></i>
+         
+              <input type="text" id="City" placeholder="Enter Your City" />
+            </div>
+
+<div class="country-info">
+  <div class="country-list">
+    <label for="country">Country</label>
+    <div class="contact-info world-select">
+      <i class="fa-solid fa-earth-africa"></i>
+      <select name="country" id="country">
+        <option value="select">Select</option>
+        <option value="turkiye">Turkey</option>
+        <option value="Canada">Canada</option>
+        <option value="Fransa">Fransa</option>
+      </select>
+    </div>
+  </div>
+  <div class="post-list">
+    <label for="post-code">Post-Code</label>
+    <div class="contact-info">
+      <i class="fa-solid fa-envelopes-bulk"></i>
+      </i>
+      <input
+        type="text"
+        name="post-code"
+        id="post-code"
+        placeholder="Enter Your code"
+      />
+    </div>
+  </div>
+
+</div>
+            <div class="checklist">
+              <input type="checkbox" name="repeat" id="repeat" />
+              <label for="repeat">See this information next time</label>
+            </div>
+          </form>
+          <button class="btn-continue">Continue</button>
+        </div>
+      </div>
+      <div class="shopping-cart">
+        <div class="product1">
+          <div class="image1">
+            <img src="/photo1.png" alt="" />
+          </div>
+          <div class="info">
+            <h3>Vintage Backbag</h3>
+            <p>
+              $54.99 <span> <del>94.99</del> </span>
+            </p>
+
+            <div class="buttons">
+              <button>-</button>
+              <p>1</p>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+        <div class="product1">
+          <div class="image2">
+            <img src="/photo2.png" alt="" />
+          </div>
+          <div class="info">
+            <h3>Vintage Backbag</h3>
+            <p>
+              $74.99 <span> <del>124.99</del> </span>
+            </p>
+            <div class="buttons">
+              <button>-</button>
+              <p>1</p>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

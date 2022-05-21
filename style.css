@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Helvetica, sans-serif;
+    
+}
+label{
+    display: block;
+
+}
+input{
+    width: 100%;
+  
+    border:1px solid rgb(246, 241, 241);
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+.main{
+    background-color: rgb(244, 242, 242);
+    border-radius: 8px;
+display: grid;
+grid-template-columns: repeat(2,1fr);
+margin: 2rem auto;
+gap: 2rem;
+width: 80%;
+height: 80vh;
+}
+.container{
+   
+    
+    display: grid;
+   grid-template-rows: 25vh 75vh;
+    gap:1rem;
+    margin-left: 1rem;
+}
+.contact__form{
+    margin-top: 2rem;
+
+}
+
+.contact-info{
+    display:flex;
+    margin-bottom: 1rem;
+    border: 1px solid rgb(211, 208, 208) ;
+
+    border-radius: 4px;
+    gap: 0.2rem;
+    color: rgb(156, 156, 156);
+
+}
+.contact-info i{
+
+   align-self: center;
+   padding-left: 0.6rem;
+}
+.header{
+    text-align:center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+ 
+}
+
+.world-select{
+    padding:0.3rem;
+
+}
+.world-select select{
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+
+.btn-continue{
+    margin: 2rem;
+}
+img{
+    height:9rem;
+    width: 7;
+    border-radius: 10px;
+}
+
+.shopping-cart{
+    display: flex;
+    flex-direction: column;
+
+}
+.product1{
+    display: flex;
+    gap: 1rem;
+
+}
+.buttons{
+display: flex;
+border:1px solid rgb(136, 136, 136);
+gap:0.1rem;
+border-radius: 8px;
+justify-content: space-around;
+width: 80%;
+padding: 0.2rem;}
+.country-info{
+    display: flex;
+    gap: 1rem;
+}
+.checklist{
+    padding-top: 1rem;
+    display: grid;
+   grid-template-columns: 15% 85%;
+   justify-content: right;
+    
+}
+.checklist input{
+    margin-left: -1rem;
+}
