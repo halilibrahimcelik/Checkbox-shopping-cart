@@ -201,11 +201,24 @@ padding: 0.2rem;
         
     }
     .container{
-height: 80vh;
+height: 90vh;
+    }
+    .btn-continue{
+        align-self: center;
+        width: 10rem;
     }
     .shopping-cart{
         height: 40%;
         width:auto;
         margin: auto;
     }
+    .checklist{
+        grid-template-columns:10% 90%;
+        
+        justify-content: left
+    }
+    .checklist input{
+        margin-left: 0;
+    }
+    
 }
