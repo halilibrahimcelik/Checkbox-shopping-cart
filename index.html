@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
   </head>
 
   <body> 
@@ -127,10 +128,12 @@
             </div>
 
             <div class="buttons">
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
+              <button id="minus">-</button>
+              <p id="total">1</p>
+              <button id="plus">+</button>
             </div>
+            <button id="remove" class="remove">Remove</button>
+            <div id="product-total">Product Total:$ <span id="sum">45.99</span></div>
           </div>
         </div>
         <div class="product1">
@@ -139,27 +142,57 @@
           </div>
           <div class="info">
             <div class="info-text">
-              <h3>Vintage Backbag</h3>
+              <h3>Levis Shoes</h3>
+              <p>
+                $45.99 <span> <del>124.99</del> </span>
+              </p>
+            </div>
+            <div class="buttons">
+              <button id="minus">-</button>
+              <p id="total">1</p>
+              <button id="plus">+</button>
+            </div>
+            <button id="remove" class="remove">Remove</button>
+            <div id="product-total">Product Total:$ <span id="sum">45.99</span></div>
+          </div>
+        </div>
+        <div class="product1">
+          <div class="image2">
+            <img src="photo3.jpg" alt="" />
+          </div>
+          <div class="info">
+            <div class="info-text">
+              <h3>Antique Clock</h3>
               <p>
                 $74.99 <span> <del>124.99</del> </span>
               </p>
             </div>
             <div class="buttons">
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
+              <button id="minus">-</button>
+              <p id="total">1</p>
+              <button id="plus">+</button>
             </div>
+            <button id="remove" class="remove">Remove</button>
+            <div id="product-total">Product Total:$ <span id="sum">45.99</span></div>
           </div>
         </div>
       
       <div class="total">
         <div class="total-1">
+          <p>SubTotal</p>
+          <p>$1<span class="subTotal">46.96</span></p>
+        </div>
+        <div class="total-1">
+          <p>Tax(18%)</p>
+          <p>$ <span class="subTaxes">26.95</span></p>
+        </div>
+        <div class="total-1">
           <p>Shipping</p>
-          <p>$19</p>
+          <p>$<span class="shipping">15</span></p>
         </div>
         <div class="total-1">
           <p>Total</p>
-          <p>$148.98</p>
+          <p>$<span class="totalValue">188.91</span></p>
         </div>
         
       </div>

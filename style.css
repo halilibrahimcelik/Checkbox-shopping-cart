@@ -123,10 +123,15 @@ img{
 }
 .info{
 display: grid;
-grid-template-rows: 0.5fr 1fr;
+grid-template-rows: 30% 20% 25% 25%;
+gap:4px
+
 }
 .info-text{
     margin-bottom: 0;
+}
+.info-text p{
+    margin: 0;
 }
 .buttons{
 display: flex;
@@ -137,6 +142,7 @@ border-radius: 8px;
 height: 2rem;
 justify-content: space-between;
 align-items: center;
+align-self: center;
 padding: 0.2rem;
 }
 .buttons p{
@@ -153,6 +159,15 @@ padding: 0.2rem;
     font-size: larger;
     color:black;
    font-weight: bolder;
+}
+.remove{
+width: 4rem;
+height: 2rem;
+align-self: center;
+border:none;
+border-radius: 5px;
+background-color: brown;
+color:white
 }
 
 .country-info{
