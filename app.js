@@ -24,6 +24,7 @@ removeBtn.forEach((button) => {
       if (!shoppingCart.contains(product3 && product1 && product2)) {
         shoppingCart.style.display = "none";
       }
+
       product.parentElement.remove();
     }
   }
@@ -74,7 +75,6 @@ plusButtons.forEach((plusBtn) => {
       productPrice.innerText = newPrice3;
       tax3 = taxRatio * newPrice3;
     }
-
     newTaxes = tax1 + tax2 + tax3;
     newSubTotal = newPrice1 + newPrice2 + newPrice3;
     newTotalAmount = newTaxes + newSubTotal + shipping;
@@ -86,6 +86,17 @@ plusButtons.forEach((plusBtn) => {
     subTaxes.innerText = newTaxes;
     totalValue.innerText = newTotalAmount;
     e.target.previousElementSibling.innerText = totalAmount;
+    if (!shoppingCart.contains(product1)) {
+      tax1 = 0;
+      console.log("hala");
+      newPrice1 = 0;
+    } else if (!shoppingCart.contains(product2)) {
+      tax2 = 0;
+      newPrice2 = 0;
+    } else if (!shoppingCart.contains(product3)) {
+      tax3 = 0;
+      newPrice3 = 0;
+    }
   }
 });
 minusButtons.forEach((minusBtn) => {
@@ -121,6 +132,16 @@ minusButtons.forEach((minusBtn) => {
       tax3 = taxRatio * newPrice3;
     }
 
+    if (!shoppingCart.contains(product1)) {
+      tax1 = 0;
+      newPrice1 = 0;
+    } else if (!shoppingCart.contains(product2)) {
+      tax2 = 0;
+      newPrice2 = 0;
+    } else if (!shoppingCart.contains(product3)) {
+      tax3 = 0;
+      newPrice3 = 0;
+    }
     newTaxes = tax1 + tax2 + tax3;
     newSubTotal = newPrice1 + newPrice2 + newPrice3;
     newTotalAmount = newTaxes + newSubTotal + shipping;
