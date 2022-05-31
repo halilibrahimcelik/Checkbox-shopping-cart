@@ -4,21 +4,23 @@ const product2 = document.getElementById("product-2");
 const product3 = document.getElementById("product-3");
 const allProducts = document.getElementsByClassName("product");
 const total = document.querySelector(".total-container");
-const totalAmountOfProduct1 = document.getElementById("total-product1");
-const bagTotal = document.getElementById("bag-price");
+
 const subTotal = document.querySelector(".subTotal");
 const subTaxes = document.querySelector(".subTaxes");
 const totalValue = document.querySelector(".totalValue");
 
+const subProdPrices = document.querySelectorAll(".prod-price");
+const plusButtons = document.querySelectorAll(".plus-button");
+const minusButtons = document.querySelectorAll(".minus-button");
+
 const removeBtn = document.querySelectorAll(".remove");
-const minusBtn1 = document.getElementById("minus-product1");
-const plusBtn1 = document.getElementById("plus-product1");
 
 removeBtn.forEach((button) => {
   button.addEventListener("click", removeProductHandler);
   function removeProductHandler(e) {
     if (confirm("Are You Sure")) {
       let product = e.target.parentElement;
+
       if (!shoppingCart.contains(product3 && product1 && product2)) {
         shoppingCart.style.display = "none";
       }
@@ -26,57 +28,106 @@ removeBtn.forEach((button) => {
     }
   }
 });
-
 //***adding increasing pricelist */
-
-let totalAmount = 1;
-let bagPrice = 54.99;
 let shipping = 15;
-let subTotalAmount = 155.97;
-let totalValueAmount = 199;
-let subTaxesAmount = 28.03;
-let newPrice;
-let newSubTotal;
-let newTotalAmount;
-let newTaxes;
+let newSubTotal = 0;
+let newTotalAmount = 0;
+let itemPrice;
+let newPrice1 = 0;
+let newPrice2 = 0;
+let newPrice3 = 0;
+let tax1 = 0;
+let tax2 = 0;
+let tax3 = 0;
+let newTaxes = 0;
+let taxRatio = 0.18;
 
-plusBtn1.addEventListener("click", () => {
-  totalAmount++;
-  totalAmountOfProduct1.innerText = totalAmount;
+plusButtons.forEach((plusBtn) => {
+  plusBtn.addEventListener("click", plusOperHandler);
 
-  bagPriceUpdate();
+  function plusOperHandler(e) {
+    let totalAmount = e.target.previousElementSibling.innerText;
 
-  console.log(totalAmount);
-});
-minusBtn1.addEventListener("click", () => {
-  if (totalAmount < 2) {
-    return;
+    const productPrice =
+      e.target.closest(".info").lastElementChild.firstElementChild;
+    console.log(productPrice);
+
+    if (productPrice.id === "bag-price") {
+      totalAmount++;
+      itemPrice = 54.99;
+
+      newPrice1 = parseInt(totalAmount * itemPrice);
+      productPrice.innerText = newPrice1;
+      tax1 = taxRatio * newPrice1;
+    } else if (productPrice.id === "shoes-price") {
+      totalAmount++;
+      itemPrice = 45.99;
+      newPrice2 = parseInt(totalAmount * itemPrice);
+      productPrice.innerText = newPrice2;
+      tax2 = taxRatio * newPrice2;
+
+      console.log(newPrice1);
+    } else if (productPrice.id === "clock-price") {
+      totalAmount++;
+      itemPrice = 74.99;
+      newPrice3 = parseInt(totalAmount * itemPrice);
+      productPrice.innerText = newPrice3;
+      tax3 = taxRatio * newPrice3;
+    }
+
+    newTaxes = tax1 + tax2 + tax3;
+    newSubTotal = newPrice1 + newPrice2 + newPrice3;
+    newTotalAmount = newTaxes + newSubTotal + shipping;
+
+    console.log(newSubTotal, newPrice1, newPrice2, newPrice3);
+
+    console.log(newTaxes);
+    subTotal.innerText = newSubTotal;
+    subTaxes.innerText = newTaxes;
+    totalValue.innerText = newTotalAmount;
+    e.target.previousElementSibling.innerText = totalAmount;
   }
-  totalAmount--;
-  totalAmountOfProduct1.innerText = totalAmount;
-  bagPriceUpdate();
 });
+minusButtons.forEach((minusBtn) => {
+  minusBtn.addEventListener("click", minusOperHandler);
 
-function bagPriceUpdate() {
-  newPrice = totalAmount * bagPrice;
+  function minusOperHandler(e) {
+    let totalAmount = e.target.nextElementSibling.innerText;
+    console.log(totalAmount);
 
-  bagTotal.innerText = newPrice;
-  taxes();
-  subTotalProduct();
-  totalValueProduct();
-}
+    if (totalAmount < 1) {
+      return;
+    }
+    const productPrice =
+      e.target.closest(".info").lastElementChild.firstElementChild;
+    console.log(productPrice);
+    if (productPrice.id === "bag-price") {
+      totalAmount--;
+      itemPrice = 54.99;
+      newPrice1 = parseInt(totalAmount * itemPrice);
+      productPrice.innerText = newPrice1;
+      tax1 = taxRatio * newPrice1;
+    } else if (productPrice.id === "shoes-price") {
+      totalAmount--;
+      itemPrice = 45.99;
+      newPrice2 = parseInt(totalAmount * itemPrice);
+      productPrice.innerText = newPrice2;
+      tax2 = taxRatio * newPrice2;
+    } else if (productPrice.id === "clock-price") {
+      totalAmount--;
+      itemPrice = 74.99;
+      newPrice3 = parseInt(totalAmount * itemPrice);
+      productPrice.innerText = newPrice3;
+      tax3 = taxRatio * newPrice3;
+    }
 
-function taxes() {
-  newTaxes = parseInt((newPrice * 18) / 100);
+    newTaxes = tax1 + tax2 + tax3;
+    newSubTotal = newPrice1 + newPrice2 + newPrice3;
+    newTotalAmount = newTaxes + newSubTotal + shipping;
 
-  return (subTaxes.innerText = newTaxes);
-}
-function subTotalProduct() {
-  newSubTotal = newPrice;
-  return (subTotal.innerText = newSubTotal);
-}
-
-function totalValueProduct() {
-  newTotalAmount = newPrice + newTaxes + shipping + newSubTotal;
-  return (totalValue.innerText = newTotalAmount);
-}
+    subTaxes.innerText = newTaxes;
+    subTotal.innerText = newSubTotal;
+    totalValue.innerText = newTotalAmount;
+    e.target.nextElementSibling.innerText = totalAmount;
+  }
+});
